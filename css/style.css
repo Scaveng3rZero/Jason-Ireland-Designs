@@ -97,13 +97,19 @@ a {
 }
 
 .brand-logo {
-  width: 62px;
-  height: 62px;
-  background: var(--white);
-  border-radius: 16px;
-  padding: 0.45rem;
-  box-shadow: var(--shadow);
-  flex-shrink: 0;
+  height: 52px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo img {
+  height: 100%;
+  width: auto;
+  transition: transform .25s ease;
+}
+
+.brand:hover .brand-logo img {
+  transform: scale(1.05);
 }
 
 .brand-text {
@@ -136,12 +142,39 @@ a {
 .site-nav a {
   color: var(--muted);
   font-size: 0.95rem;
-  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color .2s ease;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width .25s ease;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--white);
+  color: white;
+}
+
+.site-nav a:hover::after {
+  width: 100%;
+}
+
+.site-header.scrolled {
+  padding: 6px 0;
+  background: rgba(5,5,5,0.95);
+  transition: all .25s ease;
+}
+
+.site-header.scrolled .brand-logo {
+  height: 42px;
 }
 
 .nav-toggle {
