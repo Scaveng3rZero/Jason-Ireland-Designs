@@ -317,6 +317,52 @@ h3 {
   padding: 1rem;
 }
 
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Purple splash */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle,
+      rgba(150, 80, 255, 0.25) 0%,
+      rgba(150, 80, 255, 0.1) 40%,
+      transparent 70%);
+  filter: blur(70px);
+  top: -120px;
+  right: -100px;
+  z-index: 0;
+}
+
+/* Yellow splash */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle,
+      rgba(255, 210, 60, 0.25) 0%,
+      rgba(255, 210, 60, 0.1) 40%,
+      transparent 70%);
+  filter: blur(80px);
+  bottom: -120px;
+  left: -80px;
+  z-index: 0;
+}
+
+/* keep hero content above splashes */
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+}
+
 .section-heading {
   max-width: 720px;
   margin-bottom: 2rem;
