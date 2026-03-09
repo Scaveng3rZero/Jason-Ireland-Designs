@@ -1,549 +1,205 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jason Ireland Designs</title>
-  <style>
-    :root {
-      --bg: #0a0a0a;
-      --panel: #121212;
-      --panel-2: #181818;
-      --text: #f5f5f5;
-      --muted: #b9b9b9;
-      --line: #2a2a2a;
-      --accent: #ffffff;
-      --max: 1180px;
-      --radius: 22px;
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top, #161616 0%, #0a0a0a 50%, #050505 100%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(100% - 2rem, var(--max));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-      background: rgba(10,10,10,.78);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-      gap: 1rem;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: .9rem;
-      min-width: 0;
-    }
-
-    .brand-mark {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
-      background: #fff;
-      padding: .55rem;
-      box-shadow: var(--shadow);
-      flex: 0 0 auto;
-    }
-
-    .brand-text {
-      min-width: 0;
-    }
-
-    .brand-text strong {
-      display: block;
-      font-size: .98rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .brand-text span {
-      display: block;
-      color: var(--muted);
-      font-size: .84rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.25rem;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--text);
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem;
-      border-radius: 999px;
-      padding: .9rem 1.25rem;
-      font-weight: 700;
-      border: 1px solid #fff;
-      transition: .2s ease;
-    }
-
-    .button:hover,
-    .button:focus-visible {
-      background: #fff;
-      color: #000;
-    }
-
-    .hero {
-      padding: 6rem 0 4rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: .4rem .8rem;
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: .8rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0 0 1rem;
-      font-size: clamp(2.8rem, 7vw, 5.4rem);
-      line-height: .96;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-    }
-
-    .hero p {
-      max-width: 62ch;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .button.secondary {
-      border-color: rgba(255,255,255,.18);
-      color: var(--text);
-      background: rgba(255,255,255,.04);
-    }
-
-    .button.secondary:hover,
-    .button.secondary:focus-visible {
-      background: rgba(255,255,255,.1);
-      color: #fff;
-    }
-
-    .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 32px;
-      padding: 2rem;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-      min-height: 420px;
-      display: grid;
-      place-items: center;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: auto -10% -30% auto;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.08);
-      filter: blur(20px);
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: -8% auto auto -8%;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.12);
-    }
-
-    .hero-logo-wrap {
-      position: relative;
-      z-index: 1;
-      background: #fff;
-      border-radius: 28px;
-      padding: 1.25rem;
-      width: min(100%, 420px);
-    }
-
-    section {
-      padding: 2rem 0 4rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin: 0 0 .6rem;
-    }
-
-    .section-copy {
-      color: var(--muted);
-      max-width: 70ch;
-      margin: 0 0 2rem;
-    }
-
-    .featured-grid,
-    .services-grid,
-    .stats-grid {
-      display: grid;
-      gap: 1.25rem;
-    }
-
-    .featured-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .services-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      margin-top: 1.5rem;
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .project-thumb {
-      aspect-ratio: 4 / 3;
-      background: linear-gradient(135deg, #2a2a2a, #111);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      display: grid;
-      place-items: center;
-      color: rgba(255,255,255,.4);
-      font-size: .95rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .card-body {
-      padding: 1.25rem;
-    }
-
-    .card h3 {
-      margin: 0 0 .4rem;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .service-card,
-    .stat-card,
-    .about-card,
-    .contact-card {
-      padding: 1.4rem;
-    }
-
-    .service-card strong,
-    .stat-card strong {
-      display: block;
-      margin-bottom: .35rem;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      align-items: stretch;
-    }
-
-    .about-card p,
-    .contact-card p,
-    .service-card p,
-    .stat-card p {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .contact-card {
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .footer {
-      padding: 2rem 0 3rem;
-      border-top: 1px solid rgba(255,255,255,.08);
-      color: var(--muted);
-      text-align: center;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .about-grid,
-      .featured-grid,
-      .services-grid,
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links,
-      .hero-actions,
-      .featured-grid,
-      .services-grid,
-      .about-grid,
-      .stats-grid {
-        grid-template-columns: 1fr;
-        width: 100%;
-      }
-
-      .nav-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: .75rem;
-      }
-
-      h1 {
-        font-size: clamp(2.4rem, 12vw, 3.4rem);
-      }
-
-      .hero {
-        padding-top: 4rem;
-      }
-    }
-  </style>
+  <meta
+    name="description"
+    content="Jason Ireland Designs portfolio featuring branding, digital art, photography, and photo-manipulation."
+  >
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Jason Ireland Designs home">
-        <div class="brand-mark">
-          <img src="Logo.png" alt="Jason Ireland Designs logo" />
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="Jason Ireland Designs home">
+        <div class="brand-logo">
+          <img src="img/logo.png" alt="Jason Ireland Designs logo">
         </div>
         <div class="brand-text">
-          <strong>Jason Ireland Designs</strong>
-          <span>Graphic Design Portfolio</span>
+          <span class="brand-name">Jason Ireland Designs</span>
+          <span class="brand-tag">Design • Digital Art • Photography</span>
         </div>
       </a>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="siteNav"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
+  <main id="main">
+    <section class="hero section" id="home">
       <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Creative. Bold. Multi-Disciplinary.</span>
+        <div class="hero-copy">
+          <p class="eyebrow">Creative. Bold. Multi-Disciplinary.</p>
           <h1>Design, digital art, and visual storytelling with a sharp creative edge.</h1>
-          <p>
-            Jason Ireland Designs is a portfolio built to showcase brand identity, digital art, photography,
-            photo-manipulation, and experimental visual work in one cohesive space. The goal is to feel professional,
-            but still unmistakably creative.
+          <p class="hero-text">
+            I create visual work that blends strong design principles with creativity,
+            atmosphere, and personality. My portfolio includes branding, digital art,
+            photography, and photo-manipulation.
           </p>
+
           <div class="hero-actions">
-            <a class="button" href="#work">View My Work</a>
-            <a class="button secondary" href="#contact">Start a Project</a>
+            <a class="btn btn-primary" href="#work">View My Work</a>
+            <a class="btn btn-secondary" href="#contact">Get In Touch</a>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="hero-logo-wrap">
-            <img src="Logo.png" alt="Jason Ireland Designs logo artwork" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="container">
-        <h2 class="section-title">Featured Work</h2>
-        <p class="section-copy">
-          This portfolio should reflect the full range of your work, not just business collateral. I’d position it as a
-          mix of identity design, digital artwork, photography, photo-manipulation, and selected portfolio pieces that
-          show both technical skill and creativity.
-        </p>
-
-        <div class="featured-grid">
-          <article class="card">
-            <div class="project-thumb">Brand Identity</div>
-            <div class="card-body">
-              <h3>Identity & Logo Design</h3>
-              <p>Personal branding, logo systems, and visual identity exploration.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="project-thumb">Digital Art</div>
-            <div class="card-body">
-              <h3>Creative Digital Work</h3>
-              <p>Illustration, stylized compositions, and concept-driven visual design.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="project-thumb">Photography</div>
-            <div class="card-body">
-              <h3>Photography & Photo-Manipulation</h3>
-              <p>Captured imagery, edits, and transformed visuals that push mood and storytelling.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <h2 class="section-title">What I Create</h2>
-        <p class="section-copy">
-          This section should show range. Instead of sounding like a business-only design studio, it can position you as
-          a designer and visual creative working across both polished client-style work and expressive artistic projects.
-        </p>
-
-        <div class="services-grid">
-          <div class="card service-card">
-            <strong>Brand Identity</strong>
-            <p>Logos, visual systems, and cohesive brand presentation.</p>
-          </div>
-          <div class="card service-card">
-            <strong>Digital Art & Design</strong>
-            <p>Creative compositions, stylized graphics, and digital visual experimentation.</p>
-          </div>
-          <div class="card service-card">
-            <strong>Photography & Editing</strong>
-            <p>Photography, retouching, and photo-manipulation built around mood and impact.</p>
-          </div>
-        </div>
-
-        <div class="stats-grid">
-          <div class="card stat-card"><strong>Creative Range</strong><p>Professional work and expressive visual art in one space.</p></div>
-          <div class="card stat-card"><strong>Bold Contrast</strong><p>Black, white, and subtle gray accents with strong impact.</p></div>
-          <div class="card stat-card"><strong>Flexible Build</strong><p>Easy to move into WordPress or custom HTML.</p></div>
-          <div class="card stat-card"><strong>Portfolio Focus</strong><p>Built to showcase both skill and personality.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About</h2>
-        <div class="about-grid">
-          <div class="card about-card">
-            <p>
-              I’m Jason Ireland, a designer and visual creative with an interest in both structured design and more expressive digital work.
-              My portfolio includes branding, digital art, photography, and photo-manipulation, all tied together by a bold, clean visual style.
-            </p>
-          </div>
-          <div class="card about-card">
-            <p>
-              I don’t want this site to feel locked into one lane. It should present me as someone who can build polished professional work,
-              but who also has a creative voice and a strong interest in visual experimentation, storytelling, and image-making.
-            </p>
+        <div class="hero-panel">
+          <div class="hero-logo-card">
+            <img src="img/logo.png" alt="Jason Ireland Designs logo on white background">
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="section" id="work">
       <div class="container">
-        <div class="card contact-card">
-          <h2 class="section-title">Let’s Build Something Sharp</h2>
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Featured Work</h2>
           <p>
-            Add your preferred contact method here, along with social links, Behance, LinkedIn, or a contact form.
+            This space is built to showcase both professional and expressive work —
+            from branding and identity design to digital artwork, photography,
+            and image manipulation.
           </p>
-          <div class="hero-actions" style="justify-content:center; margin-top:1.25rem;">
-            <a class="button" href="mailto:you@example.com">Email Me</a>
-            <a class="button secondary" href="#top">Back to Top</a>
+        </div>
+
+        <div class="work-grid">
+          <article class="card">
+            <div class="card-image placeholder">Branding & Identity</div>
+            <div class="card-body">
+              <h3>Brand Identity</h3>
+              <p>Logos, visual systems, business collateral, and personal branding work.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image placeholder">Digital Art</div>
+            <div class="card-body">
+              <h3>Digital Art & Design</h3>
+              <p>Creative visual pieces, stylized compositions, and digital concept work.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image placeholder">Photography</div>
+            <div class="card-body">
+              <h3>Photography</h3>
+              <p>Photographic work focused on composition, mood, and visual storytelling.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image placeholder">Photo Manipulation</div>
+            <div class="card-body">
+              <h3>Photo-Manipulation</h3>
+              <p>Edited and transformed imagery that combines technique with imagination.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image placeholder">Course Projects</div>
+            <div class="card-body">
+              <h3>Design Projects</h3>
+              <p>Selected academic and personal projects that show range and development.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image placeholder">Creative Work</div>
+            <div class="card-body">
+              <h3>Experimental Work</h3>
+              <p>Visual ideas, mixed-media concepts, and pieces that push beyond one lane.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>Who I Am</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="card info-card">
+            <h3>Designer + Creative</h3>
+            <p>
+              I’m Jason Ireland, a visual designer with an interest in both structured
+              design work and more expressive creative projects. I like bold contrast,
+              clean presentation, and work that feels intentional.
+            </p>
+          </div>
+
+          <div class="card info-card">
+            <h3>More Than One Lane</h3>
+            <p>
+              My portfolio is not limited to print or business design. It also reflects
+              my interest in digital art, photography, and photo-manipulation — all tied
+              together by a strong visual identity.
+            </p>
+          </div>
+
+          <div class="card info-card">
+            <h3>Built for Control</h3>
+            <p>
+              This site is built with HTML, CSS, and JavaScript so I have more control
+              over the presentation of my work and more freedom to grow the portfolio over time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s Create Something Strong</h2>
+          <p>
+            Replace this section with your real contact info, social links, or a separate
+            contact page when you're ready.
+          </p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:youremail@example.com">Email Me</a>
+            <a class="btn btn-secondary" href="#home">Back to Top</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Jason Ireland Designs. All rights reserved.</p>
+      <p>&copy; 2026 Jason Ireland Designs. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
