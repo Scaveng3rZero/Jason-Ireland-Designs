@@ -28,6 +28,45 @@ body {
   background: radial-gradient(circle at top, #161616 0%, #0a0a0a 45%, #050505 100%);
   color: var(--text);
   line-height: 1.6;
+  position: relative;
+}
+
+/* Static background color splashes */
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  right: -100px;
+  background: radial-gradient(
+    circle,
+    rgba(150, 80, 255, 0.16) 0%,
+    rgba(150, 80, 255, 0.06) 40%,
+    transparent 70%
+  );
+  filter: blur(80px);
+}
+
+body::after {
+  width: 380px;
+  height: 380px;
+  bottom: -120px;
+  left: -80px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 210, 60, 0.14) 0%,
+    rgba(255, 210, 60, 0.05) 40%,
+    transparent 70%
+  );
+  filter: blur(90px);
 }
 
 img {
@@ -205,40 +244,6 @@ a {
   align-items: center;
   position: relative;
   overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(
-    circle,
-    rgba(150, 80, 255, 0.16) 0%,
-    rgba(150, 80, 255, 0.06) 40%,
-    transparent 70%
-  );
-  filter: blur(80px);
-  top: -120px;
-  right: -100px;
-  z-index: 0;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 210, 60, 0.14) 0%,
-    rgba(255, 210, 60, 0.05) 40%,
-    transparent 70%
-  );
-  filter: blur(90px);
-  bottom: -120px;
-  left: -80px;
-  z-index: 0;
 }
 
 .hero-grid {
@@ -515,5 +520,21 @@ h3 {
 
   .btn {
     width: 100%;
+  }
+
+  body::before {
+    width: 280px;
+    height: 280px;
+    top: -80px;
+    right: -60px;
+    filter: blur(60px);
+  }
+
+  body::after {
+    width: 260px;
+    height: 260px;
+    bottom: -80px;
+    left: -50px;
+    filter: blur(65px);
   }
 }
