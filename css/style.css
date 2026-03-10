@@ -425,6 +425,28 @@ h3 {
   padding: 2.5rem 1.5rem;
 }
 
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 6px;
+  border-radius: 18px;
+}
+
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover,
+.card-link:focus-visible .card {
+  transform: translateY(-6px);
+}
+
 .site-footer {
   padding: 2rem 0 3rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
