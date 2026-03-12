@@ -131,6 +131,24 @@ a {
   height: 42px;
 }
 
+.social-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.social-icons i {
+  font-size: 18px;
+  color: var(--muted);
+  transition: color .2s ease, transform .2s ease;
+}
+
+.social-icons i:hover {
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
 .nav-wrap {
   display: flex;
   align-items: center;
