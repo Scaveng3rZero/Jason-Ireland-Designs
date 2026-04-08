@@ -1,32 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- ===== HEAD / META ===== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jason Ireland Designs</title>
+  <title>Home | Jason Ireland Designs</title>
   <meta
     name="description"
-    content="Jason Ireland Designs portfolio featuring branding, illustration, digital art, photography, and photo-manipulation."
+    content="Jason Ireland Designs graphic design portfolio featuring branding, visual design, digital work, and professional portfolio materials."
   >
-  
+
+  <!-- ===== FONTS / ICONS / STYLES ===== -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+  <!-- ===== SKIP LINK ===== -->
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- ===== SITE HEADER ===== -->
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="#home" class="brand" aria-label="Jason Ireland Designs home">
+
+      <!-- ===== BRAND ===== -->
+      <a href="index.html" class="brand" aria-label="Jason Ireland Designs home">
         <div class="brand-logo">
           <img src="img/logo-img-white.png" alt="Jason Ireland Designs logo">
         </div>
         <div class="brand-text">
           <span class="brand-name">Jason Ireland Designs</span>
-          <span class="brand-tag">Design • Illustration • Digital Art • Photography</span>
+          <span class="brand-tag">Graphic Design Portfolio</span>
         </div>
       </a>
 
+      <!-- ===== MOBILE NAV TOGGLE ===== -->
       <button
         class="nav-toggle"
         id="navToggle"
@@ -39,186 +47,251 @@
         <span></span>
       </button>
 
+      <!-- ===== MAIN NAVIGATION ===== -->
       <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="bio.html">Bio</a></li>
+          <li><a href="professional-materials.html">Professional Materials</a></li>
         </ul>
       </nav>
-      <div class="social-icons">
-  <i class="fa-brands fa-behance"></i>
-  <i class="fa-brands fa-linkedin"></i>
-  <i class="fa-brands fa-github"></i>
-</div>
+
+      <!-- ===== SOCIAL LINKS ===== -->
+      <div class="social-icons" aria-label="Social media links">
+        <a
+          href="https://www.behance.net/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Behance"
+        >
+          <i class="fa-brands fa-behance"></i>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
     </div>
   </header>
 
+  <!-- ===== MAIN CONTENT ===== -->
   <main id="main">
-    <section class="hero section" id="home">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero section">
       <div class="container hero-grid">
+
+        <!-- ===== HERO COPY ===== -->
         <div class="hero-copy">
-          <p class="eyebrow">Creative. Bold. Multi-Disciplinary.</p>
-          <h1>Design, illustration, and visual storytelling with a sharp creative edge.</h1>
+          <p class="eyebrow">Jason Ireland Designs</p>
+          <h1>Graphic design work built on clarity, creativity, and visual impact.</h1>
           <p class="hero-text">
-            I create visual work that blends strong design principles with creativity,
-            atmosphere, and personality. My portfolio includes branding, illustration,
-            digital art, photography, and photo-manipulation.
+            Welcome to my portfolio website. This space presents a refined selection of
+            graphic design work that reflects my development as a designer across branding,
+            digital design, image-making, and visual communication. My goal is to create
+            work that is visually strong, thoughtfully constructed, and professionally presented.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#work">View My Work</a>
-            <a class="btn btn-secondary" href="#contact">Get In Touch</a>
+            <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
+            <a class="btn btn-secondary" href="bio.html">Read Bio</a>
           </div>
         </div>
 
+        <!-- ===== HERO VISUAL ===== -->
         <div class="hero-panel">
           <div class="hero-logo-card">
-            <img src="img/logo-white.png" alt="Jason Ireland Designs logo on white background">
+            <img src="img/logo-white.png" alt="Jason Ireland Designs logo">
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="work">
+    <!-- ===== HOME INTRO / OVERVIEW SECTION ===== -->
+    <section class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Portfolio</p>
-          <h2>Featured Work</h2>
+          <p class="eyebrow">Portfolio Overview</p>
+          <h2>A focused presentation of my strongest work</h2>
           <p>
-            This space is built to showcase both professional and expressive work —
-            from branding and identity design to illustration, digital art,
-            photography, and image manipulation.
+            This portfolio website has been organized to highlight a selection of refined
+            design projects, provide context about my background and creative direction,
+            and present the professional materials that support my growth as a designer.
           </p>
-        </div>
-
-        <div class="work-grid">
-          <a href="branding.html" class="card-link" aria-label="View Brand Identity work">
-            <article class="card">
-              <div class="card-image placeholder">Branding &amp; Identity</div>
-              <div class="card-body">
-                <h3>Brand Identity</h3>
-                <p>Logos, visual systems, business collateral, and personal branding work.</p>
-              </div>
-            </article>
-          </a>
-
-          <a href="digital-art.html" class="card-link" aria-label="View Digital Art and Design work">
-            <article class="card">
-              <div class="card-image placeholder">Digital Art</div>
-              <div class="card-body">
-                <h3>Digital Art &amp; Design</h3>
-                <p>Creative visual pieces, stylized compositions, and digital concept work.</p>
-              </div>
-            </article>
-          </a>
-
-          <a href="photography.html" class="card-link" aria-label="View Photography work">
-            <article class="card">
-              <div class="card-image placeholder">Photography</div>
-              <div class="card-body">
-                <h3>Photography</h3>
-                <p>Photographic work focused on composition, mood, and visual storytelling.</p>
-              </div>
-            </article>
-          </a>
-
-          <a href="photo-manipulation.html" class="card-link" aria-label="View Photo-Manipulation work">
-            <article class="card">
-              <div class="card-image placeholder">Photo Manipulation</div>
-              <div class="card-body">
-                <h3>Photo-Manipulation</h3>
-                <p>Edited and transformed imagery that combines technique with imagination.</p>
-              </div>
-            </article>
-          </a>
-
-          <a href="design-projects.html" class="card-link" aria-label="View Design Projects">
-            <article class="card">
-              <div class="card-image placeholder">Course Projects</div>
-              <div class="card-body">
-                <h3>Design Projects</h3>
-                <p>Selected academic and personal projects that show range and development.</p>
-              </div>
-            </article>
-          </a>
-
-          <a href="experimental.html" class="card-link" aria-label="View Illustration and Experimental work">
-            <article class="card">
-              <div class="card-image placeholder">Illustration</div>
-              <div class="card-body">
-                <h3>Illustration &amp; Experimental</h3>
-                <p>Traditional ink drawings, mixed-media concepts, and creative exploration.</p>
-              </div>
-            </article>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="about">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2>Who I Am</h2>
         </div>
 
         <div class="about-grid">
           <div class="card info-card">
-            <h3>Designer + Creative</h3>
+            <h3>Portfolio</h3>
             <p>
-              I’m Jason Ireland, a visual designer with an interest in both structured
-              design work and more expressive creative projects. I like bold contrast,
-              clean presentation, and work that feels intentional.
+              View 10 refined graphic design works that demonstrate my skills in visual
+              communication, composition, branding, and digital design.
+            </p>
+            <p><a href="portfolio.html">Go to Portfolio</a></p>
+          </div>
+
+          <div class="card info-card">
+            <h3>Designer Bio</h3>
+            <p>
+              Learn more about my background, design interests, creative strengths,
+              and the tools I use to build and present my work.
+            </p>
+            <p><a href="bio.html">Go to Bio</a></p>
+          </div>
+
+          <div class="card info-card">
+            <h3>Professional Materials</h3>
+            <p>
+              Explore supporting materials including testimonials, branding applications,
+              contact information, and other professional portfolio assets.
+            </p>
+            <p><a href="professional-materials.html">Go to Professional Materials</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DESIGN PHILOSOPHY SECTION ===== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Design Approach</p>
+          <h2>How I approach visual problem-solving</h2>
+          <p>
+            My work is grounded in core design principles such as hierarchy, contrast,
+            balance, readability, and intentional composition. I am drawn to projects
+            that combine structure with creativity and allow visual style to support
+            a clear message.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card info-card">
+            <h3>Clarity</h3>
+            <p>
+              I aim to create work that communicates clearly and feels organized,
+              readable, and purposeful.
             </p>
           </div>
 
           <div class="card info-card">
-            <h3>More Than One Lane</h3>
+            <h3>Consistency</h3>
             <p>
-              My portfolio is not limited to print or business design. It also reflects
-              my interest in illustration, digital art, photography, and photo-manipulation —
-              all tied together by a strong visual identity.
+              I pay close attention to visual systems, alignment, typography, and the
+              overall cohesion of a design across print and digital applications.
             </p>
           </div>
 
           <div class="card info-card">
-            <h3>Built for Control</h3>
+            <h3>Creative Identity</h3>
             <p>
-              This site is built with HTML, CSS, and JavaScript so I have more control
-              over the presentation of my work and more freedom to grow the portfolio over time.
+              I want my work to feel polished and professional while still reflecting
+              originality, atmosphere, and personality.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <!-- ===== FEATURED NAVIGATION SECTION ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Explore the Site</p>
+          <h2>Navigate through the portfolio</h2>
+          <p>
+            Use the sections below to move through the main areas of the website and
+            view the work, writing, and professional materials included in this portfolio.
+          </p>
+        </div>
+
+        <div class="work-grid">
+          <a href="portfolio.html" class="card-link" aria-label="View portfolio page">
+            <article class="card">
+              <div class="card-image placeholder">10 Refined Works</div>
+              <div class="card-body">
+                <h3>Portfolio</h3>
+                <p>
+                  A curated portfolio page presenting my strongest design projects with
+                  titles and contextual descriptions.
+                </p>
+              </div>
+            </article>
+          </a>
+
+          <a href="bio.html" class="card-link" aria-label="View bio page">
+            <article class="card">
+              <div class="card-image placeholder">About the Designer</div>
+              <div class="card-body">
+                <h3>Bio</h3>
+                <p>
+                  A closer look at my creative background, process, design interests,
+                  and career direction.
+                </p>
+              </div>
+            </article>
+          </a>
+
+          <a href="professional-materials.html" class="card-link" aria-label="View professional materials page">
+            <article class="card">
+              <div class="card-image placeholder">Résumé • Testimonials • Contact</div>
+              <div class="card-body">
+                <h3>Professional Materials</h3>
+                <p>
+                  Supporting materials that strengthen the portfolio, including contact
+                  information and professional presentation pieces.
+                </p>
+              </div>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CALL TO ACTION SECTION ===== -->
+    <section class="section section-alt">
       <div class="container">
         <div class="contact-panel">
-          <p class="eyebrow">Contact</p>
-          <h2>Let’s Create Something Strong</h2>
+          <p class="eyebrow">Next Step</p>
+          <h2>Start with the portfolio</h2>
           <p>
-            Replace this section with your real contact info, social links, or a separate
-            contact page when you're ready.
+            The portfolio page contains the central body of work for this site and is
+            the best place to begin exploring my refined design projects.
           </p>
 
           <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:youremail@example.com">Email Me</a>
-            <a class="btn btn-secondary" href="#home">Back to Top</a>
+            <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
+            <a class="btn btn-secondary" href="professional-materials.html">Professional Materials</a>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
+  <!-- ===== SITE FOOTER ===== -->
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2026 Jason Ireland Designs. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- ===== SCRIPTS ===== -->
   <script src="js/script.js"></script>
 </body>
 </html>
