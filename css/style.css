@@ -707,6 +707,41 @@ p {
 }
 
 /* =========================================================
+   17A. PROFESSIONAL MATERIALS IMAGE TREATMENT
+========================================================= */
+.logo-showcase-card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.logo-showcase-image {
+  aspect-ratio: auto;
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+}
+
+.logo-showcase-image img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  object-fit: contain;
+}
+
+.material-card-image {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.material-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #e9e9e9;
+}
+
+/* =========================================================
    18. CLICKABLE PORTFOLIO IMAGES
 ========================================================= */
 .image-button {
